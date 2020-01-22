@@ -3,7 +3,7 @@ import context from './Store/Context';
 import Todo from './Todo';
 export default function TodoList() {
   const mycontext = useContext(context);
-  console.log(mycontext.dispatch, 'List Data');
+  // console.log(mycontext.dispatch, 'List Data');
 
   const showtodo = mycontext.todos.map((element) => {
     return (

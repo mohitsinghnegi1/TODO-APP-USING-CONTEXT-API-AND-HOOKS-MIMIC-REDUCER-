@@ -3,10 +3,6 @@ function editTodo(state, index, status) {}
 export default function reducer(state, action) {
   switch (action.type) {
     case 'ADD_TODO':
-      console.log('why', {
-        ...state,
-        todos: [...state.todos, action.payload]
-      });
       return {
         ...state,
         todos: [...state.todos, action.payload]
@@ -21,21 +17,18 @@ export default function reducer(state, action) {
         newTodo,
         ...state.todos.slice(action.payload.index + 1)
       ];
-      console.log('after edit ', {
-        ...state,
-        todos: newTodos
-      });
+
       return {
         ...state,
         todos: newTodos
       };
     case 'DEL_TODO':
-      console.log('del ', action.payload);
+      // console.log('del ', action.payload);
       const newTodos1 = state.todos.filter((todo) => {
-        console.log(todo.id != action.payload.id, todo.id, action.payload);
+        // console.log(todo.id != action.payload.id, todo.id, action.payload);
         return todo.id != action.payload;
       });
-      console.log('del todo ', { ...state, todos: newTodos1 });
+      // console.log('del todo ', { ...state, todos: newTodos1 });
       return { ...state, todos: newTodos1 };
     default:
       return state;

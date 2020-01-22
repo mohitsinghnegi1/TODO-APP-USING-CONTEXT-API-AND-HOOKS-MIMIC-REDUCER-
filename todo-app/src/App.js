@@ -15,7 +15,6 @@ function App() {
     localStorage.setItem('data', JSON.stringify(state));
   }, [state]);
 
-  console.log('1');
   return (
     <context.Provider
       value={{

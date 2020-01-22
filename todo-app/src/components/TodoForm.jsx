@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import context1 from './Store/Context';
-
+import { addTodo } from './Action/actions';
 export default function TodoForm() {
   const context = useContext(context1);
   const [state, setstate] = useState({
@@ -19,7 +19,7 @@ export default function TodoForm() {
   const addTodoIntoList = (e) => {
     e.preventDefault();
     if (state.todo.trim().length > 0) {
-      context.dispatch({ type: 'ADD_TODO', payload: state });
+      addTodo(state, context.dispatch);
       setstate({ todo: '', id: state.id + 1, status: 'active' });
     }
   };

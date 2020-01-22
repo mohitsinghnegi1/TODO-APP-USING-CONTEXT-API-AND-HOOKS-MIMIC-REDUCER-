@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import context from './Store/Context';
+import { editTodo, removeTodo } from './Action/actions';
 export default function Todo(props) {
   var myContext = useContext(context);
   const changeStatus = (id) => {
@@ -9,20 +10,12 @@ export default function Todo(props) {
         // ask dispacher to update global state
         var status = element.status == 'active' ? 'passive' : 'active';
         console.log('id', i);
-        myContext.dispatch({
-          type: 'EDIT_TODO',
-          payload: { index: i, status }
-        });
+        editTodo(i, status, myContext.dispatch);
       }
       i += 1;
     });
   };
-  const removeTodo = (id) => {
-    myContext.dispatch({
-      type: 'DEL_TODO',
-      payload: id
-    });
-  };
+
   return (
     <div
       class={
@@ -41,7 +34,7 @@ export default function Todo(props) {
         </p>
       </div>
       <span
-        onClick={() => removeTodo(props.id)}
+        onClick={() => removeTodo(props.id, myContext.dispatch)}
         style={{
           position: 'absolute',
           right: '20px',
