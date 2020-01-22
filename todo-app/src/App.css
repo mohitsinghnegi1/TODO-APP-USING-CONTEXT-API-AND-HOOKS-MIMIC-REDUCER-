@@ -1,38 +1,64 @@
-.App {
+body {
+  background-image: linear-gradient(
+    to right,
+    rgb(49, 158, 221),
+    rgb(47, 47, 161)
+  );
+}
+form {
+  margin-bottom: 40px;
+}
+form > input:first-child {
+  width: 450px !important;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-left: 20px;
+}
+form > input,
+font > button {
+  height: 60px;
+  /* border: none; */
+  outline: none;
+  border: none !important;
+  font-size: 22px;
+}
+form > button {
+  font-size: 22px;
+  font-weight: 700;
+  word-spacing: 10px;
+  color: #fff;
+  border: none;
+  border-bottom: none;
+  border-top: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(43, 168, 226);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#footer {
+  height: 100px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  color: #fff;
+  font-size: larger;
+  font-weight: 300;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-image: linear-gradient(
+    to right,
+    rgb(17, 17, 114),
+    rgb(49, 158, 221),
+    rgb(17, 17, 114)
+  );
+  border-top: 1px solid #fff;
+  margin: auto;
+  outline: outline !important;
 }
-
-.App-link {
-  color: #61dafb;
+button:focus {
+  outline: 0 !important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background: rgb(59, 112, 226);
+  transition: 1s all ease-out;
 }
